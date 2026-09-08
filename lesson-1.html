@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free lesson: Denial Pattern Triage, NOMOI Revenue Cycle Academy</title>
+<meta name="description" content="A free RCM lesson: how to triage a denial worklist, separate a repeat pattern from a one-off, and assign each item an owner and a next action.">
+<style>
+  :root{
+    --paper:#f6f1e6;
+    --paper-2:#efe7d6;
+    --ink:#1c2430;
+    --ink-soft:#4a5568;
+    --line:#d9cdb2;
+    --accent:#8f2a2a;
+    --accent-soft:#c9877a;
+    --ok:#2f6b52;
+    --warn:#a3691f;
+    --mono:'DM Mono', ui-monospace, 'SF Mono', monospace;
+    --serif:'Instrument Serif', Georgia, serif;
+    --sans:-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.6}
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px 80px}
+  header.top{border-bottom:1px solid var(--line);padding:18px 0;margin-bottom:8px}
+  .top-row{display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:760px;margin:0 auto;padding:0 24px}
+  .brand{font-family:var(--mono);font-weight:700;font-size:14px}
+  .brand span{color:var(--accent)}
+  .back{color:var(--ink-soft);text-decoration:none;font-size:13px}
+
+  .progress-rail{display:flex;gap:4px;margin:28px 0 6px}
+  .step{height:5px;flex:1;background:var(--line)}
+  .step.done{background:var(--ok)}
+  .step.now{background:var(--accent)}
+  .progress-label{font-family:var(--mono);font-size:12px;color:var(--ink-soft);margin-bottom:36px}
+
+  .kicker{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+  h1{font-family:var(--serif);font-weight:400;font-size:42px;line-height:1.1;margin:0 0 18px}
+  .lede{font-size:18px;color:var(--ink-soft);margin:0 0 40px}
+
+  h2{font-family:var(--serif);font-weight:400;font-size:26px;margin:44px 0 14px}
+  p{font-size:16px}
+  .note{
+    background:var(--paper-2);border-left:3px solid var(--accent-soft);padding:14px 18px;
+    font-size:14px;color:var(--ink-soft);margin:20px 0;
+  }
+
+  .frame{border:1px solid var(--line);padding:22px;margin:22px 0;background:var(--paper-2)}
+  .frame ol{padding-left:20px;margin:0}
+  .frame li{margin-bottom:12px}
+  .frame li b{color:var(--ink)}
+
+  table{width:100%;border-collapse:collapse;margin:18px 0;font-size:13px}
+  th,td{border:1px solid var(--line);padding:9px 10px;text-align:left;font-family:var(--mono)}
+  th{background:var(--ink);color:var(--paper);font-weight:600;font-size:12px}
+  td.repeat{color:var(--accent);font-weight:600}
+  td.owner-empty{color:var(--warn)}
+  caption{caption-side:top;text-align:left;font-family:var(--sans);font-size:13px;color:var(--ink-soft);margin-bottom:6px}
+
+  .exercise{border:2px solid var(--ink);padding:24px;margin:32px 0}
+  .exercise h3{font-family:var(--mono);font-size:14px;text-transform:uppercase;letter-spacing:.06em;margin:0 0 14px}
+  .q{margin-bottom:22px}
+  .q p.qtext{font-weight:600;margin:0 0 10px}
+  .opt{display:block;width:100%;text-align:left;padding:10px 14px;margin-bottom:8px;
+    background:var(--paper);border:1px solid var(--line);border-radius:2px;font-size:14px;cursor:pointer;font-family:var(--sans)}
+  .opt:hover{border-color:var(--ink)}
+  .opt.correct{background:#e4efe8;border-color:var(--ok);color:var(--ok)}
+  .opt.wrong{background:#f6e6e3;border-color:var(--accent);color:var(--accent)}
+  .opt[disabled]{cursor:default}
+  .feedback{font-size:13px;margin-top:6px;color:var(--ink-soft);display:none}
+  .feedback.show{display:block}
+
+  .score-box{margin-top:24px;padding:18px;border:1px solid var(--line);display:none}
+  .score-box.show{display:block}
+  .score-box .score-num{font-family:var(--serif);font-size:36px}
+
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:36px}
+  .btn{display:inline-block;padding:13px 22px;border-radius:2px;font-family:var(--mono);font-size:14px;font-weight:600;text-decoration:none;border:1px solid var(--ink)}
+  .btn-primary{background:var(--ink);color:var(--paper)}
+  .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+
+  footer{padding:36px 0;border-top:1px solid var(--line);color:var(--ink-soft);font-size:13px;margin-top:60px}
+
+  @media(max-width:640px){
+    h1{font-size:30px}
+    table{font-size:11px}
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="top-row">
+    <div class="brand">NOMOI <span>Revenue Cycle Academy</span></div>
+    <a class="back" href="/index.html">&larr; Back to curriculum</a>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="progress-rail">
+    <div class="step now"></div>
+    <div class="step"></div>
+    <div class="step"></div>
+    <div class="step"></div>
+    <div class="step"></div>
+    <div class="step"></div>
+  </div>
+  <div class="progress-label" id="progress-label">Your path: Lesson 1 of 6</div>
+
+  <div class="kicker">Module 01 &middot; Free lesson</div>
+  <h1>Denial pattern triage</h1>
+  <p class="lede">How to read a denial worklist, tell a repeat pattern from a one-off, and give every item an owner and a next action, before it turns into another spreadsheet nobody reworks.</p>
+
+  <h2>The problem this solves</h2>
+  <p>A denial list that just gets longer every week is not a management problem. It is a triage problem. Most billing teams treat every denied line the same way: reassign it, resubmit it, move on. That works until the same denial reason shows up on the same payer for the fifteenth time and nobody has ever asked why.</p>
+  <p>Triage means sorting the list before you work it, so effort goes to the items that are actually worth fixing at the root, not just the ones sitting at the top of the export.</p>
+
+  <h2>The four-step framework</h2>
+  <div class="frame">
+    <ol>
+      <li><b>Identify.</b> Pull the current denial export and the prior period's export. Match on a stable claim or line key, not on payer name alone.</li>
+      <li><b>Categorize.</b> Mark each item new or repeat. A repeat is the same key with the same or a closely related denial reason appearing in an earlier period.</li>
+      <li><b>Prioritize.</b> Repeats outrank new items of the same dollar size, because a repeat is evidence of a process gap, not a one-off. Group repeats by reason code to find the pattern.</li>
+      <li><b>Assign.</b> Every item on the worklist gets one owner and one next-review date. An item with no owner is not being worked, no matter how many times it appears on a report.</li>
+    </ol>
+  </div>
+
+  <div class="note">A repeat appearance on a report does not by itself prove the claim is uncollectible or that money was lost. It proves the same item needs a decision. Keep those two claims separate: triage tells you what to look at next, not what you already know happened to the cash.</div>
+
+  <h2>Worked example</h2>
+  <p>The table below uses illustrative sample data built to teach the pattern. Field names and values are constructed for this lesson and do not come from any hospital, patient, or claim record.</p>
+
+  <table>
+    <caption>Sample denial worklist, illustrative data only</caption>
+    <thead>
+      <tr><th>claim_id</th><th>payer</th><th>denial_reason</th><th>seen_prior_period</th><th>owner</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>SMP-1001</td><td>Payer A</td><td>missing prior authorization</td><td class="repeat">yes, 3x</td><td>&mdash;</td></tr>
+      <tr><td>SMP-1002</td><td>Payer B</td><td>service not covered</td><td>no</td><td>C. Rahim</td></tr>
+      <tr><td>SMP-1003</td><td>Payer A</td><td>missing prior authorization</td><td class="repeat">yes, 2x</td><td class="owner-empty">unassigned</td></tr>
+      <tr><td>SMP-1004</td><td>Payer C</td><td>coding mismatch</td><td>no</td><td>C. Rahim</td></tr>
+      <tr><td>SMP-1005</td><td>Payer A</td><td>missing prior authorization</td><td class="repeat">yes, 4x</td><td class="owner-empty">unassigned</td></tr>
+    </tbody>
+  </table>
+
+  <p>Three of the five lines share the same payer and the same denial reason, each seen in prior periods, and none of them has an owner. That is the pattern worth escalating: not a single claim, but a recurring prior-authorization gap with Payer A that keeps generating new claim IDs while the underlying cause stays unassigned. The two non-repeat lines are still real work, but they do not point to a process fix the way the pattern does.</p>
+
+  <div class="exercise">
+    <h3>Check your understanding</h3>
+
+    <div class="q" data-q="1">
+      <p class="qtext">1. A denial reason appears for the first time this period on a $40 claim. A different denial reason has appeared three times over the last three periods on a $25 claim, same payer each time. Which gets triaged first?</p>
+      <button class="opt" data-correct="false">The $40 claim, because it is the larger dollar amount</button>
+      <button class="opt" data-correct="true">The $25 claim, because the repeat pattern points to a process gap</button>
+      <button class="opt" data-correct="false">Whichever claim is older by submission date</button>
+      <div class="feedback"></div>
+    </div>
+
+    <div class="q" data-q="2">
+      <p class="qtext">2. In the worked table above, what should happen to SMP-1003 and SMP-1005 before either is marked reviewed?</p>
+      <button class="opt" data-correct="false">Resubmit both immediately, since the reason code is already known</button>
+      <button class="opt" data-correct="true">Assign an owner and a next-review date to each, and flag the shared pattern with Payer A</button>
+      <button class="opt" data-correct="false">Write both off, since they have already appeared more than once</button>
+      <div class="feedback"></div>
+    </div>
+
+    <div class="q" data-q="3">
+      <p class="qtext">3. A claim shows up as a repeat denial on this week's report but did not appear at all last week. What is the safest conclusion?</p>
+      <button class="opt" data-correct="false">The claim was definitely lost and should be written off</button>
+      <button class="opt" data-correct="true">The report gap needs checking before assuming anything about the claim's history</button>
+      <button class="opt" data-correct="false">The payer made an error and the claim should be escalated to legal</button>
+      <div class="feedback"></div>
+    </div>
+
+    <div class="score-box" id="score-box">
+      <div class="score-num" id="score-num">0 / 3</div>
+      <p id="score-text"></p>
+    </div>
+  </div>
+
+  <div class="cta-row">
+    <a class="btn btn-primary" href="/index.html#enroll">See the full six-module course</a>
+    <a class="btn btn-ghost" href="/index.html#curriculum">Back to curriculum</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap" style="padding:0 24px">
+    <p>NOMOI Revenue Cycle Academy. Sample data on this page is illustrative only and is not drawn from any hospital or patient record.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var questions = document.querySelectorAll('.q');
+  var answered = {};
+  var total = questions.length;
+
+  function markProgress() {
+    try {
+      var done = JSON.parse(localStorage.getItem('rca_progress') || '{}');
+      done['lesson-1'] = true;
+      localStorage.setItem('rca_progress', JSON.stringify(done));
+    } catch (e) {}
+  }
+
+  function checkAllAnswered() {
+    var correct = 0;
+    questions.forEach(function(q){
+      var id = q.getAttribute('data-q');
+      if (answered[id]) correct += answered[id] === 'correct' ? 1 : 0;
+    });
+    if (Object.keys(answered).length === total) {
+      var box = document.getElementById('score-box');
+      var num = document.getElementById('score-num');
+      var text = document.getElementById('score-text');
+      num.textContent = correct + ' / ' + total;
+      text.textContent = correct === total
+        ? 'All three correct. You have the core triage framework down, ready for module two.'
+        : 'Review the highlighted answers above, then continue whenever you are ready.';
+      box.classList.add('show');
+      markProgress();
+      var label = document.getElementById('progress-label');
+      if (label) label.textContent = 'Your path: Lesson 1 of 6, completed';
+      var step = document.querySelector('.step.now');
+      if (step) { step.classList.remove('now'); step.classList.add('done'); }
+    }
+  }
+
+  questions.forEach(function(q){
+    var id = q.getAttribute('data-q');
+    var opts = q.querySelectorAll('.opt');
+    var fb = q.querySelector('.feedback');
+    opts.forEach(function(opt){
+      opt.addEventListener('click', function(){
+        if (answered[id]) return;
+        var isCorrect = opt.getAttribute('data-correct') === 'true';
+        opts.forEach(function(o){
+          o.disabled = true;
+          if (o.getAttribute('data-correct') === 'true') o.classList.add('correct');
+          else if (o === opt) o.classList.add('wrong');
+        });
+        answered[id] = isCorrect ? 'correct' : 'wrong';
+        fb.textContent = isCorrect
+          ? 'Correct. The recurring pattern is the signal worth acting on.'
+          : 'Not quite. The correct answer is highlighted above.';
+        fb.classList.add('show');
+        checkAllAnswered();
+      });
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
