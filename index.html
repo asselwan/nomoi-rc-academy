@@ -121,6 +121,17 @@
   .card ul{padding-left:18px;margin:0 0 20px;color:var(--ink-soft);font-size:14px}
   .card li{margin-bottom:6px}
 
+  .team-band{
+    display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
+    margin-top:20px;padding:22px 26px;border:1px solid var(--line);background:var(--paper-2);
+    border-left:3px solid var(--accent);
+  }
+  .team-copy{max-width:560px}
+  .team-copy h3{margin:0 0 6px;font-size:17px;font-weight:600}
+  .team-copy p{margin:0;color:var(--ink-soft);font-size:14px}
+  .team-band .btn{white-space:nowrap}
+  @media(max-width:640px){.team-band{flex-direction:column;align-items:flex-start}}
+
   footer{padding:36px 0;border-top:1px solid var(--line);color:var(--ink-soft);font-size:13px}
   footer a{color:var(--ink-soft)}
 
@@ -248,29 +259,37 @@
 
   <section id="enroll">
     <h2>Free lesson, then the full course</h2>
-    <p class="section-lede">Start with module one at no cost. If it is useful to your team, the full six-module course covers the rest with worked exercises for each.</p>
+    <p class="section-lede">Start with module one at no cost. When it earns a place with your team, take the full six-module course at your own pace, or bring the whole billing floor onto it together.</p>
     <div class="price-cards">
       <div class="card">
         <h3>Lesson one</h3>
         <div class="price">Free</div>
         <ul>
-          <li>Denial pattern triage, the full lesson</li>
-          <li>Worked exercise with sample data</li>
+          <li>Denial pattern triage, the complete lesson</li>
+          <li>Worked exercise with clearly labeled sample data</li>
           <li>No account or card required</li>
         </ul>
         <a class="btn btn-primary" href="/lesson-1.html">Start the lesson</a>
       </div>
       <div class="card paid">
-        <h3>Full course</h3>
-        <div class="price">Priced per seat, billed once</div>
+        <h3>Full course, individual seat</h3>
+        <div class="price">Reserve your seat</div>
         <ul>
-          <li>All six modules with worked exercises</li>
-          <li>Built for Saudi and GCC hospital billing teams</li>
-          <li>Team seats available on request</li>
+          <li>All six modules, each with its own worked exercise</li>
+          <li>Written for NPHIES and GCC payer requirements</li>
+          <li>Progress tracked against your own path, no leaderboard</li>
+          <li>Ongoing access to every module you enroll in</li>
         </ul>
-        <a class="btn btn-ghost" id="enroll-cta" href="mailto:assel@nomoi.ai?subject=NOMOI%20Revenue%20Cycle%20Academy%20-%20full%20course">Request enrollment</a>
-        <p class="fine">Checkout link goes live once pricing is confirmed. Email enrollment is open now.</p>
+        <a class="btn btn-ghost" id="enroll-cta" href="mailto:assel@nomoi.ai?subject=NOMOI%20Revenue%20Cycle%20Academy%2C%20individual%20seat&amp;body=I%20would%20like%20to%20reserve%20an%20individual%20seat%20on%20the%20full%20course.%0A%0AName%3A%0AHospital%20or%20clinic%3A%0ACountry%3A">Reserve an individual seat</a>
+        <p class="fine">Self-serve card checkout opens once per-seat pricing is confirmed. Reserve now to hold your place and be first in line when it does.</p>
       </div>
+    </div>
+    <div class="team-band">
+      <div class="team-copy">
+        <h3>Bringing a whole billing team</h3>
+        <p>Team seats for a billing, coding, or denials unit are enrolled together and priced per group. Tell us how many seats and which country you bill in, and we will confirm the per-seat rate and set the team up.</p>
+      </div>
+      <a class="btn btn-ghost" href="mailto:assel@nomoi.ai?subject=NOMOI%20Revenue%20Cycle%20Academy%2C%20team%20seats&amp;body=We%20would%20like%20team%20seats%20for%20our%20billing%20unit.%0A%0AHospital%20or%20clinic%3A%0ACountry%3A%0AApproximate%20number%20of%20seats%3A">Ask about team seats</a>
     </div>
   </section>
 

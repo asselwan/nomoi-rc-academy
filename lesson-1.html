@@ -75,6 +75,18 @@
   .score-box.show{display:block}
   .score-box .score-num{font-family:var(--serif);font-size:36px}
 
+  .enroll-reveal{
+    border:2px solid var(--accent);background:var(--paper-2);padding:26px;margin:34px 0;
+    opacity:0;transform:translateY(8px);transition:opacity .5s ease, transform .5s ease;
+  }
+  .enroll-reveal.show{opacity:1;transform:none}
+  .enroll-reveal .kicker{margin-bottom:4px}
+  .enroll-reveal h2{margin:6px 0 12px}
+  .reveal-list{list-style:none;padding:0;margin:16px 0 24px}
+  .reveal-list li{padding:10px 0;border-bottom:1px solid var(--line);font-size:15px;color:var(--ink-soft)}
+  .reveal-list li:last-child{border-bottom:none}
+  .reveal-list li b{color:var(--ink)}
+
   .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:36px}
   .btn{display:inline-block;padding:13px 22px;border-radius:2px;font-family:var(--mono);font-size:14px;font-weight:600;text-decoration:none;border:1px solid var(--ink)}
   .btn-primary{background:var(--ink);color:var(--paper)}
@@ -180,6 +192,20 @@
     </div>
   </div>
 
+  <div class="enroll-reveal" id="enroll-reveal" hidden>
+    <div class="kicker">You just finished module one</div>
+    <h2>What the full course adds</h2>
+    <p>You just triaged a denial worklist the way this course teaches it. The remaining five modules take the same worked-example approach through the rest of the revenue cycle:</p>
+    <ul class="reveal-list">
+      <li><b>Claim lifecycle fundamentals</b> &mdash; find which stage a stuck claim is actually sitting in.</li>
+      <li><b>Coding accuracy and documentation checks</b> &mdash; tell a missing code from an unsupported one.</li>
+      <li><b>Payer rule change management</b> &mdash; turn a payer circular into a dated, checkable rule.</li>
+      <li><b>Encounter overlap and duplicate service review</b> &mdash; catch conflicting encounters before they deny.</li>
+      <li><b>NPHIES submission standards</b> &mdash; structural checks that stop a clean claim being rejected.</li>
+    </ul>
+    <a class="btn btn-primary" href="/index.html#enroll">Reserve your full-course seat</a>
+  </div>
+
   <div class="cta-row">
     <a class="btn btn-primary" href="/index.html#enroll">See the full six-module course</a>
     <a class="btn btn-ghost" href="/index.html#curriculum">Back to curriculum</a>
@@ -226,6 +252,11 @@
       if (label) label.textContent = 'Your path: Lesson 1 of 6, completed';
       var step = document.querySelector('.step.now');
       if (step) { step.classList.remove('now'); step.classList.add('done'); }
+      var reveal = document.getElementById('enroll-reveal');
+      if (reveal) {
+        reveal.hidden = false;
+        requestAnimationFrame(function(){ requestAnimationFrame(function(){ reveal.classList.add('show'); }); });
+      }
     }
   }
 
