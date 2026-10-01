@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Module 2: Claim lifecycle fundamentals, NOMOI Revenue Cycle Academy</title>
+<meta name="description" content="Trace a claim from registration to remittance and reconciliation, then practice finding the first missing checkpoint.">
+<style>
+:root{--paper:#f6f1e6;--paper-2:#efe7d6;--ink:#1c2430;--soft:#4a5568;--line:#d9cdb2;--accent:#8f2a2a;--ok:#2f6b52;--mono:ui-monospace,'SF Mono',monospace;--serif:'Instrument Serif',Georgia,serif;--sans:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 var(--sans)}a{color:inherit}.wrap{max-width:800px;margin:auto;padding:0 24px 70px}header{border-bottom:1px solid var(--line);padding:18px 0}.top-row{max-width:800px;margin:auto;padding:0 24px;display:flex;justify-content:space-between;gap:16px;align-items:center}.brand{font:700 14px var(--mono)}.brand span{color:var(--accent)}.back{font-size:13px;color:var(--soft)}.rail{display:flex;gap:4px;margin:28px 0 6px}.step{height:5px;flex:1;background:var(--line)}.step.now{background:var(--accent)}.step.done{background:var(--ok)}.progress{font:12px var(--mono);color:var(--soft);margin-bottom:35px}.kicker{font:12px var(--mono);text-transform:uppercase;letter-spacing:.1em;color:var(--accent)}h1,h2{font-family:var(--serif);font-weight:400;line-height:1.15}h1{font-size:42px;margin:10px 0 18px}h2{font-size:27px;margin:42px 0 12px}h3{font-size:17px;margin:0 0 6px}.lede{font-size:18px;color:var(--soft)}.note,.stage{background:var(--paper-2);border:1px solid var(--line);padding:18px 20px;margin:14px 0}.note{border-left:3px solid var(--accent)}.stage p{margin:0;color:var(--soft)}.stage small{display:block;font:12px var(--mono);color:var(--accent);margin-bottom:6px}.stage strong{color:var(--ink)}.table-wrap{overflow-x:auto}table{width:100%;border-collapse:collapse;font:13px var(--mono);min-width:610px}caption{text-align:left;font:13px var(--sans);color:var(--soft);margin-bottom:8px}th,td{border:1px solid var(--line);padding:10px;text-align:left;vertical-align:top}th{background:var(--ink);color:var(--paper)}.exercise{border:2px solid var(--ink);padding:24px;margin:35px 0}.exercise h2{margin:0 0 10px}.question{border:0;border-top:1px solid var(--line);padding:18px 0 0;margin:18px 0 0}.question legend{font-weight:600;padding:0 0 8px}.option{display:block;border:1px solid var(--line);padding:10px 12px;margin:8px 0;cursor:pointer}.option:has(input:focus-visible){outline:2px solid var(--accent)}.option.correct{border-color:var(--ok);background:#e4efe8}.option.wrong{border-color:var(--accent);background:#f6e6e3}.feedback{font-size:14px;color:var(--soft);margin:8px 0 0}.result{background:var(--paper-2);padding:16px;margin-top:20px}.btn{display:inline-block;border:1px solid var(--ink);background:var(--ink);color:var(--paper);font:600 14px var(--mono);padding:12px 20px;cursor:pointer;text-decoration:none}.btn:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}.links{display:flex;gap:12px;flex-wrap:wrap;margin-top:35px}.links a{font:14px var(--mono)}footer{border-top:1px solid var(--line);padding:24px;color:var(--soft);font-size:13px}@media(max-width:640px){h1{font-size:31px}.top-row{align-items:flex-start}.exercise{padding:18px}}
+</style>
+</head>
+<body>
+<header><div class="top-row"><div class="brand">NOMOI <span>Revenue Cycle Academy</span></div><a class="back" href="/index.html#curriculum">&larr; Back to curriculum</a></div></header>
+<main class="wrap">
+  <div class="rail" aria-hidden="true"><div class="step"></div><div class="step now"></div><div class="step"></div><div class="step"></div><div class="step"></div><div class="step"></div></div>
+  <div class="progress" id="progress-label">Your path: Lesson 2 of 6</div>
+  <div class="kicker">Module 02 &middot; Claim lifecycle fundamentals</div>
+  <h1>Find the first missing checkpoint</h1>
+  <p class="lede">A claim can be delayed before it reaches a payer, after the payer receives it, or after the payer decides. The next action depends on which checkpoint has evidence and which one does not.</p>
+
+  <h2>Follow the evidence, not the status label</h2>
+  <p>A worklist entry marked “pending” is a starting point, not a diagnosis. Ask what event should have happened next, what record would prove it, and who owns the handoff. A prepared claim is not necessarily submitted. A submitted file is not necessarily accepted. An accepted claim is not necessarily paid. A remittance showing payment is not proof that cash was posted and reconciled.</p>
+  <div class="note">This is an operational tracing method, not a payer rule or a promise of recovery. Check the current payer contract and submission guidance before acting on any real claim. Do not infer a write-off from a missing status or a denied line alone.</div>
+
+  <h2>Six checkpoints to trace</h2>
+  <div class="stage"><small>01 &middot; Front end</small><h3>Registration and coverage</h3><p>Confirm the encounter and coverage details were captured for the service date. <strong>Evidence:</strong> registration record and dated eligibility response. <strong>If absent:</strong> route to the registration or eligibility owner before assuming a billing failure.</p></div>
+  <div class="stage"><small>02 &middot; Preparation</small><h3>Documentation, coding, and charge review</h3><p>Confirm the billable services have supporting documentation and passed the team's coding and charge checks. <strong>Evidence:</strong> completed review or a specific hold reason. <strong>If held:</strong> send the exact gap to the documentation or coding owner.</p></div>
+  <div class="stage"><small>03 &middot; Outbound</small><h3>Submission and technical acknowledgement</h3><p>Find the outbound batch record, then the receiving gateway or payer acknowledgement. <strong>Evidence:</strong> transmission identifier and an accepted or rejected response. <strong>If there is no acknowledgement:</strong> investigate transmission or validation before calling it a payer denial.</p></div>
+  <div class="stage"><small>04 &middot; Payer decision</small><h3>Adjudication and remittance</h3><p>For an accepted submission, find the payer's decision in the remittance and distinguish paid, denied, and still undecided lines. <strong>Evidence:</strong> remittance tied to the submitted claim or line. <strong>If absent:</strong> follow up on the payer response; do not invent an outcome.</p></div>
+  <div class="stage"><small>05 &middot; Recovery</small><h3>Denial review or correction</h3><p>For a denied line, verify its reason and supporting records, then choose a documented correction, appeal, or closure path under the current payer terms. <strong>Evidence:</strong> reason, owner, action, and next-review date. A denial by itself does not establish that an appeal will succeed.</p></div>
+  <div class="stage"><small>06 &middot; Financial close</small><h3>Posting and reconciliation</h3><p>Match the remittance to posted payment or adjustment and investigate any difference. <strong>Evidence:</strong> posted transaction and reconciliation record. A paid remittance with no matching posting is a reconciliation task, not a new claim submission.</p></div>
+
+  <h2>Worked example</h2>
+  <p>The following IDs and events are constructed solely for this lesson. They are not patient, hospital, payer, or claim records.</p>
+  <div class="table-wrap"><table><caption>Illustrative sample worklist</caption><thead><tr><th>Sample</th><th>Latest evidence</th><th>Missing next evidence</th><th>First owner / action</th></tr></thead><tbody>
+  <tr><td>EX-201</td><td>Prepared claim; no outbound batch ID</td><td>Transmission record</td><td>Billing operations: check outbound queue and hold reason</td></tr>
+  <tr><td>EX-202</td><td>Batch sent; gateway rejected a required field</td><td>Accepted acknowledgement</td><td>Submission team: correct field, then verify acceptance</td></tr>
+  <tr><td>EX-203</td><td>Accepted acknowledgement; no remittance</td><td>Payer decision</td><td>AR follow-up: trace payer status using submission reference</td></tr>
+  <tr><td>EX-204</td><td>Remittance says paid; nothing posted</td><td>Posting match</td><td>Cash posting: reconcile remittance and transaction</td></tr>
+  </tbody></table></div>
+  <p>EX-202 has reached the gateway but has not passed its technical check. Calling it a denial skips a checkpoint: there is no accepted claim for adjudication yet. EX-204 has crossed the payer decision checkpoint; sending it again would not resolve the missing posting match. Both need a named owner and a verifiable next event.</p>
+
+  <section class="exercise" aria-labelledby="exercise-title">
+    <h2 id="exercise-title">Apply the checkpoint method</h2>
+    <p>Choose one answer per case, then check your work. Feedback explains each decision. These cases are illustrative.</p>
+    <form id="quiz">
+      <fieldset class="question" data-answer="b"><legend>1. A biller has a prepared claim but cannot find a batch ID. What should be checked first?</legend>
+        <label class="option"><input type="radio" name="q1" value="a"> Appeal the payer denial</label>
+        <label class="option"><input type="radio" name="q1" value="b"> Check the outbound queue and any hold reason</label>
+        <label class="option"><input type="radio" name="q1" value="c"> Reconcile a posted payment</label><p class="feedback" hidden></p>
+      </fieldset>
+      <fieldset class="question" data-answer="c"><legend>2. A gateway rejected a required field. Which evidence must come next before payer follow-up?</legend>
+        <label class="option"><input type="radio" name="q2" value="a"> A remittance showing payment</label>
+        <label class="option"><input type="radio" name="q2" value="b"> A write-off approval</label>
+        <label class="option"><input type="radio" name="q2" value="c"> A corrected submission and accepted acknowledgement</label><p class="feedback" hidden></p>
+      </fieldset>
+      <fieldset class="question" data-answer="a"><legend>3. A remittance shows payment, but the amount is not posted. Which team should receive the first task?</legend>
+        <label class="option"><input type="radio" name="q3" value="a"> Cash posting, to match the remittance to the transaction</label>
+        <label class="option"><input type="radio" name="q3" value="b"> Submission, to send the claim again</label>
+        <label class="option"><input type="radio" name="q3" value="c"> Coding, to add an unsupported service</label><p class="feedback" hidden></p>
+      </fieldset>
+      <button class="btn" type="submit">Check answers</button>
+      <div class="result" id="result" role="status" aria-live="polite" hidden></div>
+    </form>
+  </section>
+  <div class="links"><a href="/lesson-1.html">&larr; Review module 1</a><a href="/index.html#curriculum">Back to curriculum &rarr;</a></div>
+</main>
+<footer><div class="wrap" style="padding-bottom:0">NOMOI Revenue Cycle Academy. All exercise examples are illustrative and contain no patient or hospital records.</div></footer>
+<script>
+(function(){
+  var form = document.getElementById('quiz');
+  var questions = Array.from(form.querySelectorAll('.question'));
+  var explanations = [
+    'A prepared claim without a batch ID has no evidence of transmission. The outbound queue or hold reason is the first checkpoint to inspect.',
+    'A technical rejection is before payer adjudication. Correct the field and confirm an accepted acknowledgement before looking for a remittance.',
+    'The payer decision is already recorded. Cash posting should trace the remittance to the transaction and resolve the unmatched amount.'
+  ];
+  form.addEventListener('submit', function(event){
+    event.preventDefault();
+    var missing = questions.find(function(q){return !q.querySelector('input:checked');});
+    var result = document.getElementById('result');
+    if(missing){result.hidden=false;result.textContent='Choose an answer for every case before checking.';missing.querySelector('input').focus();return;}
+    var score=0;
+    questions.forEach(function(q,i){
+      var selected=q.querySelector('input:checked');
+      var correct=selected.value===q.dataset.answer;
+      if(correct) score++;
+      q.querySelectorAll('.option').forEach(function(label){
+        label.classList.remove('correct','wrong');
+        var value=label.querySelector('input').value;
+        if(value===q.dataset.answer) label.classList.add('correct');
+        else if(label.contains(selected)) label.classList.add('wrong');
+      });
+      var feedback=q.querySelector('.feedback');
+      feedback.hidden=false;
+      feedback.textContent=(correct?'Correct. ':'Review this checkpoint. ')+explanations[i];
+    });
+    result.hidden=false;
+    result.textContent=score+' / '+questions.length+' correct. '+(score===questions.length?'All checkpoints identified.':'Change any answer and check again to practice.');
+    if(score===questions.length){
+      try{var done=JSON.parse(localStorage.getItem('rca_progress')||'{}');done['lesson-2']=true;localStorage.setItem('rca_progress',JSON.stringify(done));}catch(e){}
+      document.getElementById('progress-label').textContent='Your path: Lesson 2 of 6, completed';
+      var step=document.querySelector('.step.now');step.classList.remove('now');step.classList.add('done');
+    }
+  });
+})();
+</script>
+</body>
+</html>

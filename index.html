@@ -153,6 +153,7 @@
     <nav>
       <a href="#curriculum">Curriculum</a>
       <a href="/lesson-1.html">Free lesson</a>
+      <a href="/lesson-2.html">Module 2</a>
       <a href="#enroll">Enroll</a>
     </nav>
   </div>
@@ -214,13 +215,14 @@
         </div>
         <div class="mtag free">Free</div>
       </div>
-      <div class="module">
+      <div class="module" id="module-2">
         <div class="mnum">02</div>
         <div class="mbody">
-          <h3>Claim lifecycle fundamentals</h3>
+          <h3><a href="/lesson-2.html">Claim lifecycle fundamentals</a></h3>
           <p>Registration through payment: the checkpoints where a claim gets delayed, held, or written off, and how to spot which stage a stuck claim is actually sitting in.</p>
+          <p><a href="/lesson-2.html">Open module 2 &rarr;</a></p>
         </div>
-        <div class="mtag">Full course</div>
+        <div class="mtag">Read lesson</div>
       </div>
       <div class="module">
         <div class="mnum">03</div>
@@ -321,6 +323,10 @@
     if (done['lesson-1']) {
       var tag = document.querySelector('.module.free .mtag');
       if (tag) { tag.textContent = 'Completed'; tag.style.borderColor = '#2f6b52'; tag.style.color = '#2f6b52'; }
+    }
+    if (done['lesson-2']) {
+      var tag2 = document.querySelector('#module-2 .mtag');
+      if (tag2) { tag2.textContent = 'Completed'; tag2.style.borderColor = '#2f6b52'; tag2.style.color = '#2f6b52'; }
     }
   } catch (e) {}
 })();
