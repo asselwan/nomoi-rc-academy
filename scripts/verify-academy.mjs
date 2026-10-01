@@ -10,6 +10,10 @@ const landing = read('index.html');
 const first = read('lesson-1.html');
 const second = read('lesson-2.html');
 const stripe = read('scripts/setup-academy-stripe.mjs');
+const dockerfile = read('Dockerfile');
+for (const page of ['index.html', 'lesson-1.html', 'lesson-2.html']) {
+  assert.ok(dockerfile.includes(`COPY ${page} /usr/share/nginx/html/${page}`), `production image omits ${page}`);
+}
 
 for (const [name, html] of [['index.html', landing], ['lesson-1.html', first], ['lesson-2.html', second]]) {
   for (const [, href] of html.matchAll(/href="(\/[^"#?]+)(?:#[^"]*)?"/g)) {
